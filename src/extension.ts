@@ -56,7 +56,7 @@ class SqliteViewProvider implements vscode.TextDocumentContentProvider {
 
     async provideTextDocumentContent(uri: vscode.Uri): Promise<string> {
         const dbPath = decodeURIComponent(uri.query);
-        const wasmPath = path.join(this.context.extensionPath, 'node_modules', 'sql.js', 'dist', 'sql-wasm.wasm');
+        const wasmPath = path.join(this.context.extensionPath, 'dist', 'sql-wasm.wasm');
         const wasmBytes = await vscode.workspace.fs.readFile(vscode.Uri.file(wasmPath));
         const SQL = await initSqlJs({ wasmBinary: wasmBytes.buffer as ArrayBuffer });
         const dbBytes = await vscode.workspace.fs.readFile(vscode.Uri.file(dbPath));

@@ -2,6 +2,7 @@
   "name": "simple-sqlite-viewer",
   "displayName": "Simple SQLite Viewer",
   "description": "Read-only viewer for SQLite .db files.",
+  "license": "MIT",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.125.0"

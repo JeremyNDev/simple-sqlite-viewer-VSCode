@@ -1,4 +1,6 @@
 const esbuild = require("esbuild");
+const fs = require("fs");
+const path = require("path");
 
 const production = process.argv.includes('--production');
 const watch = process.argv.includes('--watch');
@@ -24,6 +26,11 @@ const esbuildProblemMatcherPlugin = {
 };
 
 async function main() {
+	fs.mkdirSync('dist', { recursive: true });
+	fs.copyFileSync(
+		path.join('node_modules', 'sql.js', 'dist', 'sql-wasm.wasm'),
+		path.join('dist', 'sql-wasm.wasm')
+	);
 	const ctx = await esbuild.context({
 		entryPoints: [
 			'src/extension.ts'
