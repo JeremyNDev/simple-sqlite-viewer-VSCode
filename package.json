@@ -1,8 +1,13 @@
 {
   "name": "simple-sqlite-viewer",
+  "publisher": "JeremyNDev",
   "displayName": "Simple SQLite Viewer",
   "description": "Read-only viewer for SQLite .db files.",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JeremyNDev/simple-sqlite-viewer-VSCode.git"
+  },
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.125.0"
